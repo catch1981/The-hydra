@@ -1,0 +1,33 @@
+
+mode = "wide"
+sudo_token_env = "VIREN_SUDO_TOKEN"
+
+[models]
+endpoint   = "http://localhost:11434"
+reasoner   = "llama3.1:8b"
+coder      = "qwen2.5-coder:7b"
+embeddings = "nomic-embed-text"
+
+[stt]
+backend = "none"
+model   = "base.en"
+
+[tts]
+backend = "elevenlabs"
+voice_id = "Rachel"
+stability = 0.5
+similarity_boost = 0.7
+
+[hybrid]
+enable_cloud = true
+local_first  = true
+time_budget  = 8
+confidence_floor = 0.45
+
+[mesh]
+enable = true
+node_id = "pan-node"
+room    = "coven-zero"
+relays  = ["ws://127.0.0.1:8787"]
+e2e_enable = false
+e2e_key_env = "MESH_E2E_KEY"

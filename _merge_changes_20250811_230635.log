@@ -1,0 +1,5 @@
+[INFO] Start: Mon Aug 11 11:06:35 PM UTC 2025
+[INFO] Extracting /workspace/_incoming.zip to /workspace/_incoming_zip_20250811_230635
+[INFO] Extraction complete: Mon Aug 11 11:06:35 PM UTC 2025
+[INFO] Merging into /workspace with rsync; backups in /workspace/_merge_backup_20250811_230635
+[ERROR] rsync failed
