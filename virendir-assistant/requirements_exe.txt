@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+requests
+websockets
+psutil
+firebase-admin
+cryptography
+pystray
+pillow

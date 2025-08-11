@@ -1,0 +1,51 @@
+/workspace/virendir-assistant/server/app.py:75: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+Traceback (most recent call last):
+  File "/workspace/virendir-assistant/server/app.py", line 133, in <module>
+    @app.post("/stt")
+     ~~~~~~~~^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/routing.py", line 995, in decorator
+    self.add_api_route(
+    ~~~~~~~~~~~~~~~~~~^
+        path,
+        ^^^^^
+    ...<23 lines>...
+        generate_unique_id_function=generate_unique_id_function,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/routing.py", line 934, in add_api_route
+    route = route_class(
+        self.prefix + path,
+    ...<24 lines>...
+        generate_unique_id_function=current_generate_unique_id,
+    )
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/routing.py", line 555, in __init__
+    self.dependant = get_dependant(path=self.path_format, call=self.endpoint)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 285, in get_dependant
+    param_details = analyze_param(
+        param_name=param_name,
+    ...<2 lines>...
+        is_path_param=is_path_param,
+    )
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 482, in analyze_param
+    ensure_multipart_is_installed()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 115, in ensure_multipart_is_installed
+    raise RuntimeError(multipart_not_installed_error) from None
+RuntimeError: Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
