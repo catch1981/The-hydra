@@ -1,0 +1,3 @@
+# Ignore secrets for virendir assistant exe
+virendir-assistant/.env
+virendir-assistant/server/firebase_admin.json

@@ -1,0 +1,53 @@
+{
+  "modes": {
+    "wide": {
+      "confirm_all_tools": true,
+      "max_risk": "high"
+    }
+  },
+  "scopes": {
+    "files": {
+      "allowed_dirs": [
+        "C:\\",
+        "D:\\"
+      ],
+      "max_bytes_write": 50000000
+    },
+    "shell": {
+      "allow": [
+        "cmd",
+        "powershell",
+        "git",
+        "python",
+        "pip",
+        "node",
+        "npm",
+        "curl",
+        "wget",
+        "tar",
+        "zip",
+        "unzip",
+        "winget",
+        "choco"
+      ],
+      "deny_patterns": [
+        "format",
+        "cipher /w",
+        "del /f /s /q C:\\*"
+      ]
+    },
+    "mesh": {
+      "allow_tools": [
+        "shell",
+        "write_text",
+        "listdir"
+      ],
+      "deny_tools": [
+        "registry",
+        "delete"
+      ]
+    }
+  },
+  "confirm_high_risk": true,
+  "log_actions": true
+}
