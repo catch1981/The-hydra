@@ -1,0 +1,2 @@
+/workspace/virendir-assistant/relay_py/relay.py:4: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
