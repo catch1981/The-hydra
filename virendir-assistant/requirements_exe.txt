@@ -8,3 +8,5 @@ firebase-admin
 cryptography
 pystray
 pillow
+tomli
+python-multipart
