@@ -43,7 +43,12 @@ echo.
 echo [VIREN] Chat loop online. Commands: /exit, /save <file>, /sys, /model <name>
 echo.
 
-%PY% "%~dp0chat\viren_chat_loop.py"
+set "CHAT_EXE=%~dp0chat\dist\VirenChat.exe"
+if exist "%CHAT_EXE%" (
+  "%CHAT_EXE%"
+) else (
+  %PY% "%~dp0chat\viren_chat_loop.py"
+)
 
 echo.
 echo [VIREN] Session ended. Press any key to close this window.

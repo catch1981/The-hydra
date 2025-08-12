@@ -1,7 +1,10 @@
 
 import os, sys, subprocess, threading, time, signal, webbrowser, psutil
 
-ROOT = os.path.abspath(os.path.dirname(__file__))
+if getattr(sys, 'frozen', False):
+    ROOT = os.path.abspath(getattr(sys, '_MEIPASS', os.path.dirname(sys.executable)))
+else:
+    ROOT = os.path.abspath(os.path.dirname(__file__))
 PY   = sys.executable
 
 def envfile():
