@@ -1,5 +1,9 @@
 
-import os, time, socket, requests, tomllib, json
+import os, time, socket, requests, json
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.responses import Response, PlainTextResponse
 from pydantic import BaseModel
