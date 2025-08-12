@@ -1,3 +1,4 @@
 @echo off
-REM One-touch launcher: starts relay + daemon
-C:\virendir-assistant\start_virendir.bat
+set "ROOT=%~dp0"
+cd /d "%ROOT%"
+call "%ROOT%start_virendir.bat"

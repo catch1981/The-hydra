@@ -1,10 +1,10 @@
 
 @echo off
-set ROOT=C:\virendir-assistant
-cd /d %ROOT%
+set "ROOT=%~dp0"
+cd /d "%ROOT%"
 
 :: Load env
-call "%ROOT%\load_env.bat" || exit /b 1
+call "%ROOT%load_env.bat" || exit /b 1
 
 :: Activate venv (create if missing)
 if not exist "%ROOT%\.venv" (

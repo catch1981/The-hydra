@@ -12,4 +12,11 @@ pyinstaller --noconfirm --onefile --icon assets\icon.ico ^
   --add-data "assets;assets" ^
   launcher.py -n Virendir
 echo.
-echo ✅ Build complete: %ROOT%\dist\Virendir.exe
+echo 	Build complete: %ROOT%\dist\Virendir.exe
+
+REM Optionally build SFX if 7-Zip is installed
+if exist "%ProgramFiles%\7-Zip\7z.exe" (
+  call build_sfx.bat
+) else (
+  echo 7-Zip not found; skipping SFX build. Install from https://www.7-zip.org/
+)
