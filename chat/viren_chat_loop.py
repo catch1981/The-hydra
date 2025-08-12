@@ -55,6 +55,7 @@ def stream_chat(messages, model):
     return ""
 
 def main():
+    global SYSTEM, history, MODEL
     print("[VIREN] Chat loop online. Type /exit to quit, /save <file>, /sys to edit system prompt, /model <name>")
     print(f"[VIREN] Model: {MODEL} | Endpoint: {OLLAMA}")
     pull_model(MODEL)
@@ -92,7 +93,6 @@ def main():
                     lines.append(line)
                 new_sys = "\n".join(lines).strip()
                 if new_sys:
-                    global SYSTEM, history
                     SYSTEM = new_sys
                     # replace first system message
                     if history and history[0]["role"] == "system":
@@ -103,7 +103,6 @@ def main():
                 continue
             elif cmd == "/model":
                 if arg:
-                    global MODEL
                     MODEL = arg.strip()
                     print(f"[VIREN] Model switched to {MODEL}.")
                     pull_model(MODEL)
