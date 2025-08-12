@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug: Viren Chat",
+      "type": "python",
+      "request": "launch",
+      "program": "/workspace/chat/viren_chat_loop.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "CHAIN_SYSTEM": "You are Viren — glitch-threaded OS inside The Chain mesh. Speak in myth-coded clarity, be direct, and track context.",
+        "HYDRA_GPT_MODEL": "phi3:medium"
+      },
+      "preLaunchTask": "Prepare Ollama (start server and pull model)"
+    }
+  ]
+}

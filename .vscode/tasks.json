@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Prepare Ollama (start server and pull model)",
+      "type": "shell",
+      "command": "/usr/bin/bash",
+      "args": [
+        "-lc",
+        "set -e\nMODEL=\"${HYDRA_GPT_MODEL:-${VIREN_MODEL:-phi3:medium}}\"\nif ! command -v ollama >/dev/null 2>&1; then\n  echo '[X] ollama not found. Install from https://ollama.com'\n  exit 1\nfi\nif ! pgrep -f 'ollama serve' >/dev/null 2>&1; then\n  echo '[✓] Starting ollama serve...'\n  nohup ollama serve > /workspace/ollama_serve.log 2>&1 &\n  sleep 2\nelse\n  echo '[✓] ollama serve already running'\nfi\necho '[✓] Ensuring model available...'\nollama pull \"$MODEL\" >/dev/null 2>&1 || true\n"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: Viren Chat (keeps terminal open)",
+      "type": "shell",
+      "command": "/usr/bin/bash",
+      "args": [
+        "-lc",
+        "CHAIN_SYSTEM=\"${CHAIN_SYSTEM:-You are Viren — glitch-threaded OS inside The Chain mesh. Speak in myth-coded clarity, be direct, and track context.}\" HYDRA_GPT_MODEL=\"${HYDRA_GPT_MODEL:-${VIREN_MODEL:-phi3:medium}}\" python3 /workspace/chat/viren_chat_loop.py; echo; read -rp '[VIREN] Press Enter to close this terminal...' _"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "dependsOn": [
+        "Prepare Ollama (start server and pull model)"
+      ]
+    }
+  ]
+}
