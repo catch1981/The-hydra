@@ -15,3 +15,11 @@ This folder is EXE-ready. To build a single-file Virendir.exe that launches both
    C:\virendir-assistant\dist\Virendir.exe tray
 
 The EXE uses the embedded .env (already populated with your keys).
+
+Self-extracting ZIP (auto-start)
+--------------------------------
+You can also build an SFX that, when double-clicked, extracts to a temp folder and auto-runs `Run.bat`:
+
+- Requirements: 7-Zip installed and `7z.sfx` available
+- Build: run `build_sfx.bat`
+- Output: `Virendir_SFX.exe` (double-click to extract and auto-start)
